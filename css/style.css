@@ -8,7 +8,10 @@
   --color-gray-dark-3: #6f6f6f;
   --color-gray-light-1: #f5f5f5;
   --color-gray-light-2: #e2e2e2;
-  --color-gray-light-3: #cfcfcf; }
+  --color-gray-light-3: #cfcfcf;
+  --color-white: #fff;
+  --color-black: #000;
+  --shadow-dark: 0 1.6rem 3.2rem rgba(0, 0, 0, 0.3); }
 
 * {
   margin: 0;
@@ -31,3 +34,26 @@ body {
   color: var(--color-gray-dark-2);
   background-image: linear-gradient(to right bottom, var(--color-primary-light), var(--color-primary-dark));
   background-repeat: no-repeat; }
+
+.container {
+  max-width: 120rem;
+  margin: 8rem auto;
+  background-color: var(--color-gray-light-1);
+  box-shadow: var(--shadow-dark);
+  min-height: 50rem; }
+
+.header {
+  height: 7rem;
+  background-color: var(--color-white);
+  border-bottom: 1px solid var(--color-gray-light-1); }
+
+.content {
+  display: flex; }
+
+.sidebar {
+  background-color: var(--color-gray-dark-1);
+  flex: 0 0 15%; }
+
+.movies {
+  background-color: var(--color-white);
+  flex: 1; }
