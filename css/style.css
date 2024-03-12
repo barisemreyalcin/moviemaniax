@@ -163,6 +163,42 @@ body {
   padding: 2rem;
   text-align: center; }
 
+.gallery {
+  display: flex; }
+  .gallery__photo {
+    width: 100%;
+    display: block; }
+
+.overview {
+  display: flex;
+  align-items: center;
+  border-bottom: 1px solid var(--color-gray-light-1); }
+  .overview__heading {
+    font-size: 2.4rem;
+    font-weight: 300;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    padding: 1.2rem 2.4rem;
+    margin-right: auto; }
+  .overview__duration-box, .overview__rating-box {
+    display: flex;
+    align-items: center;
+    padding: 0 1.6rem; }
+  .overview__duration-icon, .overview__rating-icon {
+    width: 1.75rem;
+    height: 1.75rem;
+    fill: var(--color-primary);
+    margin-right: 0.8rem; }
+  .overview__duration-detail, .overview__rating-detail {
+    font-size: 1.6rem;
+    line-height: 0; }
+  .overview__rating-box {
+    align-self: stretch;
+    background-color: var(--color-primary);
+    color: var(--color-gray-light-1); }
+  .overview__rating-icon {
+    fill: var(--color-gray-light-1); }
+
 .container {
   max-width: 120rem;
   margin: 8rem auto;
