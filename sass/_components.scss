@@ -505,9 +505,43 @@
 .gallery {
   display: flex;
 
+  &__item {
+    position: relative;
+    overflow: hidden;
+  }
+
   &__photo {
     width: 100%;
     display: block;
+    transition: all 0.3s;
+  }
+
+  &__quote-box {
+    font-size: 1.2rem;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    padding: 1.2rem;
+    text-align: center;
+    background: rgba(0, 0, 0, 0.5);
+    color: var(--color-gray-light-2);
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+    transition: all 0.3s;
+
+    @media only screen and (max-width: $breakpoint-xsm) {
+      display: none;
+    }
+  }
+
+  &__photo:hover ~ &__quote-box {
+    opacity: 1;
+    visibility: visible;
+  }
+
+  &__photo:hover {
+    transform: scale(1.1);
   }
 }
 

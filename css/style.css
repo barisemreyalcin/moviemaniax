@@ -457,9 +457,34 @@ body {
 
 .gallery {
   display: flex; }
+  .gallery__item {
+    position: relative;
+    overflow: hidden; }
   .gallery__photo {
     width: 100%;
-    display: block; }
+    display: block;
+    transition: all 0.3s; }
+  .gallery__quote-box {
+    font-size: 1.2rem;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    padding: 1.2rem;
+    text-align: center;
+    background: rgba(0, 0, 0, 0.5);
+    color: var(--color-gray-light-2);
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+    transition: all 0.3s; }
+    @media only screen and (max-width: 30em) {
+      .gallery__quote-box {
+        display: none; } }
+  .gallery__photo:hover ~ .gallery__quote-box {
+    opacity: 1;
+    visibility: visible; }
+  .gallery__photo:hover {
+    transform: scale(1.1); }
 
 .overview {
   display: flex;
