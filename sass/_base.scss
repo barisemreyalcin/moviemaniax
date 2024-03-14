@@ -30,6 +30,35 @@ $breakpoint-md: 56.25em; // 900px
 $breakpoint-sm: 37.5em; // 600px
 $breakpoint-xsm: 30em; // 480px
 
+@mixin hoverEffect($bg-colors) {
+  $bg-color-1: nth($bg-colors, 1);
+  $bg-color-2: nth($bg-colors, 2);
+
+  &::before {
+    content: "";
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 4px;
+    background-color: $bg-color-1;
+    transform: scale(0);
+    transition: transform 0.2s, width 0.2s cubic-bezier(1, 0, 0, 1) 0.2s,
+      background-color 0.1s;
+  }
+
+  &:hover::before,
+  &--active::before {
+    transform: scale(1);
+    width: 100%;
+  }
+
+  &:active::before {
+    background-color: $bg-color-2;
+  }
+}
+
 * {
   margin: 0;
   padding: 0;
