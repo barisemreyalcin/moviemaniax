@@ -14,6 +14,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
+  position: relative;
 
   @media only screen and (max-width: $breakpoint-xsm) {
     order: 1;
@@ -72,6 +73,73 @@
     height: 100%;
     width: 100%;
     fill: var(--color-gray-dark-3);
+  }
+
+  &__history {
+    display: flex;
+    flex-direction: column;
+    gap: 0.8rem;
+    width: 90%;
+    padding: 0.8rem;
+    background-color: var(--color-white);
+    box-shadow: var(--shadow-light);
+
+    position: absolute;
+    top: 100%;
+    z-index: 555;
+
+    visibility: hidden;
+    pointer-events: none;
+    opacity: 0;
+    transition: all 0.2s;
+  }
+
+  &__item {
+    display: flex;
+    align-items: center;
+    gap: 0.8rem;
+    padding: 0.4rem;
+    cursor: pointer;
+    position: relative;
+
+    > * {
+      position: relative;
+      z-index: 556;
+    }
+
+    &:not(:last-child) {
+      border-bottom: var(--border-line);
+    }
+
+    $hover-bg-colors: var(--color-gray-light-3), var(--color-gray-light-2);
+
+    @include hoverEffect($hover-bg-colors);
+
+    &--unread {
+      background-color: var(--color-gray-light-1);
+    }
+  }
+
+  &__photo {
+    width: 4rem;
+    height: 4rem;
+  }
+
+  &__name {
+    margin-right: auto;
+    font-size: 1.2rem;
+  }
+
+  &__icon--history {
+    width: 2rem;
+    height: 2rem;
+    fill: var(--color-gray-dark-3);
+  }
+
+  &__input:focus ~ &__history {
+    visibility: visible;
+    pointer-events: initial;
+    opacity: 1;
   }
 }
 
